@@ -195,6 +195,9 @@ line vty 0 4
  login
 !
 end
+
+```
+
 │
 ├── screenshots/
 │   ├── <img width="1835" height="652" alt="Screenshot 2026-01-05 073849" src="https://github.com/user-attachments/assets/d652a2b5-81b1-49de-813e-5d5ae94471e7" />
@@ -211,5 +214,3 @@ end
 
 │
 └── README.md
-
-```
