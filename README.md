@@ -1,6 +1,10 @@
 [Router-Config 1.txt](https://github.com/user-attachments/files/24435427/Router-Config.1.txt)[Router-Config 1.txt](https://github.com/user-attachments/files/24435414/Router-Config.1.txt)[Router-Config 1.txt](https://github.com/user-attachments/files/24435331/Router-Config.1.txt)[README.md](https://github.com/user-attachments/files/24433712/README.md)# Packet-Tracer-Three-Site-Corporate-Network
 Multi-site Cisco Packet Tracer lab featuring static routing, DHCP-managed client networks, and statically addressed infrastructure servers
 
+## Repository Structure
+
+```
+
 packet-tracer-multi-site-network/
 │
 ├── topology/
@@ -207,3 +211,5 @@ end
 
 │
 └── README.md
+
+```
