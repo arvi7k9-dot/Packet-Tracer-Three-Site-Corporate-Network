@@ -213,4 +213,59 @@ end
 │   ├── <img width="909" height="601" alt="Screenshot 2026-01-05 073921" src="https://github.com/user-attachments/assets/e46d59e2-d31d-4e19-9d93-aa4ee2691a50" />
 
 │
-└── README.md
+└── [Network Build and Configuration Process.txt](https://github.com/user-attachments/files/24436975/Network.Build.and.Configuration.Process.txt)
+Network Build and Configuration Process
+
+This section outlines the step-by-step process used to design, configure, and validate the three-site corporate network topology in Cisco Packet Tracer. The goal was to create a realistic multi-site environment with routed connectivity, DHCP-managed client networks, and centralized infrastructure services.
+
+Topology Design and Device Placement
+
+The lab began by placing three routers, one for each site, to represent the core routing devices responsible for inter-site connectivity. Each site was then provisioned with Cisco 3650 switches to act as the primary distribution switches (two at Site 1, and one each at Site 2 and Site 3).
+
+To support end-user access, Cisco 2950T access switches were added at Site 1 and Site 3. These switches were used to connect PCs and laptops to the network, providing a layered access/distribution design similar to a real enterprise environment.
+
+Server Deployment
+
+Dedicated servers were deployed based on their functional role:
+
+Site 1 and Site 3 each received a DHCP server to dynamically assign IP configurations to client devices.
+
+Site 2 was designated as the infrastructure services site and hosted:
+
+A DNS server
+
+An HTTP server (used to simulate access to google.com)
+
+All servers in Site 2 were configured with static IP addresses to ensure stability and predictable addressing for critical services.
+
+Physical Connectivity
+
+Appropriate cabling was used to reflect best practices:
+
+Copper straight-through cables connected routers, servers, and end devices to the primary 3650 switches.
+
+Copper crossover cables connected the 3650 distribution switches to the 2950T access switches.
+
+Serial DCE links were used to interconnect the routers between sites, with Site 2 acting as the central hub connecting to both Site 1 and Site 3.
+
+All devices and links were clearly labeled within Packet Tracer to document IP addressing and interface relationships.
+
+Router Configuration and Routing
+
+Each router was configured with the correct IP addresses on all interfaces and enabled using the no shutdown command. Interface status and addressing were verified using show ip interface brief.
+
+Static routing was implemented on all three routers using the ip route command to ensure that each router was aware of the remote networks in the topology. Connectivity between routers was tested and verified before moving on to client and service configuration.
+
+Service Configuration
+
+The HTTP server at Site 2 was configured with static network settings, and its default web page was customized to represent google.com. The DNS server at Site 2 was also statically configured, with DNS services enabled and an A record created to resolve google.com to the internal HTTP server’s IP address.
+
+DHCP services were configured independently at Site 1 and Site 3. Each DHCP pool was created with the appropriate network address, subnet mask, default gateway, and DNS server to ensure clients received complete and correct IP configurations.
+
+Client Configuration and Validation
+
+PCs and laptops at Site 1 and Site 3 were configured to obtain their IP settings automatically via DHCP. Each client device was labeled with its assigned IP address to simplify validation and troubleshooting.
+
+End-to-end connectivity was tested using ICMP (ping) between routers, servers, and client devices across all three sites. Successful communication confirmed that routing and addressing were correctly configured.
+
+Finally, web connectivity was validated by accessing google.com from client devices using the Packet Tracer web browser, confirming proper DNS resolution and HTTP service availability across routed networks.
